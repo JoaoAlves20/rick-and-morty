@@ -2,11 +2,9 @@ import { useState, useEffect } from "react"
 
 import { fetchCharacters } from "../../services/fetchCharacter"
 
-import Button from "../../components/Button"
+import ContainerButtons from '../../components/ContainerButton'
 
-import { Container, ContainerButton, Card } from "./styles"
-import advance from '../../assets/icons/advance.svg'
-import back from '../../assets/icons/back.svg'
+import { Container, Card } from "./styles"
 
 export default function Characters() {
   const [characters, setCharacters] = useState([])
@@ -33,27 +31,31 @@ export default function Characters() {
 
   return (
     <>
+      <ContainerButtons 
+        functionClickDecrease={decreasePage}
+        functionClickIncrease={increasePage}
+      />
       <Container>
         {characters.map((character) => (
-          <Card key={character.id}>
-            <img src={character.image} alt={character.name} />
+          <Card
+            key={character.id}
+            className={character.status}
+          >
+            <img 
+              src={character.image} 
+              alt={character.name}
+            />
             <h3>{character.name}</h3>
-            <span>Status - {character.status}</span>
+            <span>Status: {character.status}</span>
+            <span>Species: {character.species}</span>
+            <span><strong>Gender:</strong> {character.gender}</span>
           </Card>
         ))}
       </Container>
-      <ContainerButton>
-        <Button 
-          functionClick={decreasePage}
-          imageSrc={back}
-          imageAlt="Back page"
-        />
-        <Button 
-          functionClick={increasePage}
-          imageSrc={advance}
-          imageAlt="Advance page"
-        />
-      </ContainerButton>
+      <ContainerButtons 
+        functionClickDecrease={decreasePage}
+        functionClickIncrease={increasePage}
+      />
     </>
   )
 }

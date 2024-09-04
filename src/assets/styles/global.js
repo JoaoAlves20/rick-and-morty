@@ -9,10 +9,6 @@ export default createGlobalStyle`
   }
 
   body {
-    background: linear-gradient(
-      90deg,
-      ${({ theme }) => theme.colors.gradientBody[1]},
-      ${({ theme }) => theme.colors.gradientBody[2]}
-    );
+    background: ${({ theme }) => theme.colors.primaryColors[1]};
   }
 `;

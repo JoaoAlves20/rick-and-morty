@@ -1,9 +1,11 @@
 export const styleDefault = {
   colors: {
     text: '#fff',
-    gradientBody: {
-      1: '#1fbfd1',
-      2: '#05f511'
+    primaryColors: {
+      1: '#37d0e1',
+      2: '#05f511',
+      3: '#1eb7c8',
+      4: '#006670'
     },
     gray: {
       primary: '#404040',
