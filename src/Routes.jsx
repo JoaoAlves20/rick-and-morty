@@ -1,11 +1,13 @@
-import { Route, Routes } from "react-router-dom"
+import { Route, Routes } from "react-router-dom";
 
-import Characters from "./pages/Characters"
+import Home from "./pages/Home";
+import Characters from "./pages/Characters";
 
 export default function Router() {
   return (
     <Routes>
-      <Route exact path="/characters" Component={Characters} />
+      <Route exact path="/" Component={Home} />
+      <Route path="/characters" Component={Characters} />
     </Routes>
-  )
-}
+  );
+};

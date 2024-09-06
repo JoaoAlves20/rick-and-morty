@@ -1,7 +1,7 @@
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "../../assets/styles/global";
 
-import { styleDefault } from '../../assets/styles/default'
+import { styleDefault } from "../../assets/styles/default";
 
 import Header from "../Header";
 import Router from "../../Routes";
@@ -13,5 +13,5 @@ export default function App() {
       <Header />
       <Router />
     </ThemeProvider>
-  )
-}
+  );
+};
